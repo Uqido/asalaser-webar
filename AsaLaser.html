@@ -433,6 +433,16 @@
             5: ["hotspot-5"]
         };
 
+        getAnnotations().forEach((element)=>{
+            element.style.display="none";
+        })
+
+        modelViewer.addEventListener('load', () => {
+            getAnnotations().forEach((element)=>{
+                element.style.display="block";
+            })
+        });
+
     </script>
     <script src="js/NewContentCustomizer.js"></script>
     <script>
