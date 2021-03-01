@@ -1,0 +1,37 @@
+{
+  "en": {
+    "hotspot-1": "10.1” Touch Screen Display: the software is full of pre-set programs and customisation options. Updatable software and qualified personnel assistance.",
+    "hotspot-2": "Optical Fibre: flexible, resistant and protected by a double sheath. For an optimal distribution of the energy mix over the target area.",
+    "hotspot-3": "Hardware: M-VET is lightweight, pleasant to the touch and ultra-resistant against knocks, scratches and bites.",
+    "hotspot-4": "Handpiece: light and compact, provided with 4 lenses. The connection system allows immediate interchangeability and automatic adaptation of the treatment parameters.",
+    "hotspot-5": "Battery & Back-up System: M-VET ensures continuity and precision in all conditions, when connected to the power supply, in case of a voltage drop and even outdoors."
+  },
+  "it": {
+    "hotspot-1": "Touch screen 10.1’’ Display: software ricco di programmi preimpostati e possibilità di personalizzazione. Software aggiornabile e assistito da personale qualificato.",
+    "hotspot-2": "Fibra ottica: flessibile, robusta e protetta da una doppia guaina. Per un'ottimale diffusione del mix energetico nell’area sottoposta al trattamento.",
+    "hotspot-3": "Hardware: M-VET è leggero, piacevole al tatto e ultra-resistente contro urti, graffi e morsi.",
+    "hotspot-4": "Manipolo: leggero e compatto. Il sistema di connessione dei quattro terminali ottici permette immediata intercambiabilità e adattamento automatico dei parametri di trattamento.",
+    "hotspot-5": "Batteria & Sistema Back-up: M-VET assicura continuità e precisione in qualsiasi circostanza, quando connesso alla corrente, nell’eventualità di un calo di tensione e anche con utilizzo in esterna."
+  },
+  "fr": {
+    "hotspot-1": "Écran tactile 10.1’’ : Logiciel rempli de programmes prédéfinis et d'options de personnalisation. Logiciel actualisable et assistance de personnel qualifié.",
+    "hotspot-2": "Fibre optique : flexible, résistante et protégée par une double gaine. Pour une diffusion optimale du mélange énergétique sur toute la zone traitée.",
+    "hotspot-3": "Hardware : M-VET est léger, agréable au toucher et ultrarésistant aux coups, aux rayures et aux morsures",
+    "hotspot-4": "Pointeur : léger et compact. Le système de connexion des quatre lentilles permet une interchangeabilité immédiate et une adaptation automatique des paramètres de traitement.",
+    "hotspot-5": "Batterie & Système de sauvegarde : M-VET assure  continuité et précision dans toutes les conditions, lorsque branché sur secteur, en cas de chute de tension et même en cas d'utilisation à l'extérieur."
+  },
+  "de": {
+    "hotspot-1": "Touchscreen-Display mit 10,1\": Die Software ist mit vielen voreingestellten Programmen und Personalisierungsmöglichkeiten ausgestattet. Die Software kann upgedatet werden und qualifizierte persönliche Assistenz wird angeboten.",
+    "hotspot-2": "Optische Faser: flexibel, strapazierfähig und durch eine doppelte Ummantelung geschützt. Sie garantiert eine homogene Verteilung der Energie im Zielbereich.",
+    "hotspot-3": "Hardware: M-VET ist leicht, fühlt sich angenehm an und bietet besondere Festigkeit gegenüber Stößen, Kratzern und Bissen.",
+    "hotspot-4": "Handstück: leicht und kompakt. Das Verbindungssystem der vier Linsen garantiert ein schnelles Austauschen und automatisches Anpassen der Behandlungsparameter.",
+    "hotspot-5": "Batterie & Backup-System: M-VET wurde entwickelt, um Kontinuität und Präzision unter allen Bedingungen zu garantieren, mit Verbindung zur Stromversorgung, im Fall eines Spannungsabfalls als auch bei der Verwendung im Freien. "
+  },
+  "es": {
+    "hotspot-1": "Pantalla táctil 10.1”: Software con amplio abanico de programas preconfigurados y opciones de personalización. Software actualizable y asistido por personal calificado. ",
+    "hotspot-2": "Fibra óptica: flexible, resistente y protegida por un doble revestimiento. Permite la distribución homogénea de la energía sobre el área objetivo.",
+    "hotspot-3": "Hardware: M-VET es ligero, agradable al tacto y ultrarresistente a golpes, arañazos y mordeduras",
+    "hotspot-4": "Manipulo: ligero y compacto. El sistema de conexión de las cuatro lentes permite intercambiabilidad inmediata y adaptación automática de los parámetros de tratamiento.",
+    "hotspot-5": "Batería & Sistema de back-up: M-VET garantiza la continuidad y precisión en todas las condiciones, conectado a la fuente de alimentación, tanto en caso de caída de tensión como cuando se utiliza en exteriores."
+  }
+}
