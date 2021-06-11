@@ -34,7 +34,7 @@
 
         const banana = new Banana(lang);
 
-        fetch('i18n/localization.json')
+        fetch('i18n/M8-localization.json')
             .then((response) => response.json())
             .then((messages) => {
                 banana.load(messages);
@@ -325,12 +325,10 @@
               camera-orbit="140deg 60.76deg 1.3m" min-camera-orbit="auto 0deg 0.6m"
               max-camera-orbit="auto 88deg 2m" min-field-of-view="42.62deg" max-field-of-view="auto">
 
-    <div id="hotspot-1" style="width: 24px;height: 24px" slot="hotspot-2" data-position="-0.0509m 0.1382m -0.0545m"
+    <div id="hotspot-1" style="width: 24px;height: 24px" slot="hotspot-2" data-position="0m 1m 0.1m"
          data-normal="0 1 0" data-visibility-attribute="visible" onclick="onPinClick('hotspot-1')">
-        <div data-i18n="hotspot-1" class="hotspot-pin-text text-white hotspot-content">10.1” Touch Screen Display: the
-            software is full of
-            pre-set
-            programs and customisation options. Updatable software and qualified personnel assistance.
+        <div data-i18n="hotspot-1" class="hotspot-pin-text text-white hotspot-content">
+            AUTOMATION | The movement of the column and arm and rotation of the head in 5 robotized directions, enable perfect positioning on the target area.
         </div>
         <div class="hotspot-pin">
         </div><!-- dot -->
@@ -341,13 +339,11 @@
 
 
     <div id="hotspot-2" class="hotspot-pin" slot="hotspot-3"
-         data-position="-0.056355620408485976m 0.054634910920275306m -0.20597698024565153m" data-normal="0 1 0"
+         data-position="0m 1.44m -0.38m" data-normal="0 1 0"
          data-visibility-attribute="visible">
         <div class="hotspot-pin" onclick="onPinClick('hotspot-2')">
-            <div class="hotspot-pin-text text-white hotspot-content" data-i18n="hotspot-2">Optical Fibre: flexible,
-                resistant and protected by
-                a double
-                sheath. For an optimal distribution of the energy mix over the target area.
+            <div class="hotspot-pin-text text-white hotspot-content" data-i18n="hotspot-2">
+                ROBOTIC HEAD | Exclusive MLS® multidiode applicator with 75W Peak Power
             </div>
         </div><!-- dot -->
         <div class="pulse outer"></div><!-- pulse outer -->
@@ -357,13 +353,11 @@
 
 
     <div id="hotspot-3" class="hotspot-pin" slot="hotspot-4"
-         data-position="-0.06758326757836984m 0.18027717361586956m 0.1356011369233579m" data-normal="0 1 0"
+         data-position="-0.15m 0.87m 0.3m" data-normal="0 1 0"
          data-visibility-attribute="visible">
         <div class="hotspot-pin" onclick="onPinClick('hotspot-3')">
-            <div class="hotspot-pin-text text-white hotspot-content" data-i18n="hotspot-3">Hardware: M-VET is
-                lightweight, pleasant to the
-                touch and
-                ultra-resistant against knocks, scratches and bites.
+            <div class="hotspot-pin-text text-white hotspot-content" data-i18n="hotspot-3">
+                DOUBLE TREATMENT | M8 provides treatments mainly through the robotic head, while the user is free to use the handpiece on painful areas such as trigger points.
             </div><!-- dot -->
             <div class="pulse outer"></div><!-- pulse outer -->
             <div class="pulse mid"></div><!-- pulse mid -->
@@ -372,30 +366,11 @@
         </div>
     </div>
     <div id="hotspot-4" class="hotspot-pin" slot="hotspot-5"
-         data-position="0.13570368605289662m 0.18092579863863011m 0.07082931474443667m" data-normal="0 1 0"
+         data-position="0m 0.97m 0.28m" data-normal="0 1 0"
          data-visibility-attribute="visible">
         <div class="hotspot-pin" onclick="onPinClick('hotspot-4')">
-            <div class="hotspot-pin-text text-white hotspot-content" data-i18n="hotspot-4">Handpiece: light and compact,
-                provided with 4
-                lenses. The
-                connection
-                system allows immediate interchangeability and automatic adaptation of the treatment parameters.
-            </div>
-            <div class="pulse outer"></div><!-- pulse outer -->
-            <div class="pulse mid"></div><!-- pulse mid -->
-            <div class="pulse inner"></div><!-- pulse inner -->
-
-        </div>
-    </div>
-    <div id="hotspot-5" class="hotspot-pin" slot="hotspot-6"
-         data-position="0.09561311060212618m 0.15556548130171581m -0.11783879168076895m" data-normal="0 1 0"
-         data-visibility-attribute="visible">
-        <div class="hotspot-pin" onclick="onPinClick('hotspot-5')">
-            <div class="hotspot-pin-text text-white hotspot-content" data-i18n="hotspot-5">Battery &amp; Back-up System:
-                M-VET ensures
-                continuity and
-                precision in
-                all conditions, when connected to the power supply, in case of a voltage drop and even outdoors.
+            <div class="hotspot-pin-text text-white hotspot-content" data-i18n="hotspot-4">
+                SOFTWARE | It counts on 4 treatment modalities (Pain Management, Trigger Point, Anti-edema, Biostimulation) enabling an easier and quicker navigation when choosing the therapy.
             </div>
             <div class="pulse outer"></div><!-- pulse outer -->
             <div class="pulse mid"></div><!-- pulse mid -->
@@ -417,11 +392,11 @@
 
         let colors = [];
 
-        const positions = ["-1591deg 32.76deg 0.6977m", "145deg 70deg 100%", "135deg 70deg 100%", "135deg 30deg 100%", "165deg 70deg 100%", "25deg 20deg 100%"];
+        const positions = ["-1591deg 32.76deg 0.6977m", "145deg 70deg 100%", "135deg 70deg 100%", "135deg 30deg 100%", "165deg 70deg 100%"];
 
 
         const getAnnotations = function () {
-            return [document.getElementById("hotspot-1"), document.getElementById("hotspot-2"), document.getElementById("hotspot-3"), document.getElementById("hotspot-4"), document.getElementById("hotspot-5")].filter((elem) => elem);
+            return [document.getElementById("hotspot-1"), document.getElementById("hotspot-2"), document.getElementById("hotspot-3"), document.getElementById("hotspot-4")].filter((elem) => elem);
         }
 
         const positionToAnnotation = {
@@ -429,8 +404,7 @@
             1: ["hotspot-1"],
             2: ["hotspot-2"],
             3: ["hotspot-3"],
-            4: ["hotspot-4"],
-            5: ["hotspot-5"]
+            4: ["hotspot-4"]
         };
 
         getAnnotations().forEach((element)=>{
