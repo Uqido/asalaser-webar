@@ -392,7 +392,7 @@
 
         let colors = [];
 
-        const positions = ["-1591deg 32.76deg 0.6977m", "145deg 70deg 100%", "135deg 70deg 100%", "135deg 30deg 100%", "165deg 70deg 100%"];
+        const positions = ["-1591deg 32.76deg 0.6977m", "90deg 70deg 100%", "0deg 70deg 100%", "-90deg 70deg 100%", "165deg 70deg 100%"];
 
 
         const getAnnotations = function () {
@@ -432,7 +432,7 @@
             console.log(modelViewer.paused)
             if (modelViewer.paused) {
                 if (is_Open) {
-                    modelViewer.animationName = "CINEMA_4D_Main";
+                    modelViewer.animationName = "Animate";
                     is_Open = false;
                     const interval = setInterval(() => {
                         if (modelViewer.paused) {
@@ -441,7 +441,7 @@
                         }
                     }, 500);
                 } else {
-                    modelViewer.animationName = "CINEMA_4D_Main";
+                    modelViewer.animationName = "Animate";
                     hideAndDisablePin()
                     is_Open = true;
                 }
