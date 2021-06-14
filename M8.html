@@ -428,26 +428,35 @@
         let is_Open = false;
 
         function model_Animate() {
-            console.log("animate")
-            console.log(modelViewer.paused)
-            if (modelViewer.paused) {
-                if (is_Open) {
-                    modelViewer.animationName = "Animate";
-                    is_Open = false;
-                    const interval = setInterval(() => {
-                        if (modelViewer.paused) {
-                            clearInterval(interval);
-                            showAndEnablePin();
-                        }
-                    }, 500);
-                } else {
-                    modelViewer.animationName = "Animate";
-                    hideAndDisablePin()
-                    is_Open = true;
+                console.log("animate")
+                console.log(modelViewer.paused)
+                if (modelViewer.paused) {
+                    if (is_Open) {
+                        modelViewer.animationName = "Idle";
+                        modelViewer.animationName = "Animate";
+                        hideAndDisablePin()
+                        is_Open = false;
+                        const interval = setInterval(() => {
+                            if (modelViewer.paused) {
+                                clearInterval(interval);
+                                showAndEnablePin();
+                            }
+                        }, 500);
+                    } else {
+                        modelViewer.animationName = "Idle";
+                        modelViewer.animationName = "Animate";
+                        hideAndDisablePin()
+                        is_Open = true;
+                        const interval = setInterval(() => {
+                            if (modelViewer.paused) {
+                                clearInterval(interval);
+                                showAndEnablePin();
+                            }
+                        }, 500);
+                    }
+                    modelViewer.play();
                 }
-                modelViewer.play();
             }
-        }
 
 
         const onPinClick = function (annotationID) {
