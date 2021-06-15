@@ -12,21 +12,21 @@
     "hotspot-4": "SOFTWARE | Disponibile con 4 modalità di trattamento (Pain Management, Trigger Point, Anti-edema, Biostimolazione) facilitando navigazione e scelta della terapia."
   },
   "fr": {
-    "hotspot-1": "AUTOMATION | The movement of the column and arm and rotation of the head in 5 robotized directions, enable perfect positioning on the target area.",
-    "hotspot-2": "ROBOTIC HEAD | Exclusive MLS® multidiode applicator with 75W Peak Power",
-    "hotspot-3": "DOUBLE TREATMENT | M8 provides treatments mainly through the robotic head, while the user is free to use the handpiece on painful areas such as trigger points.",
-    "hotspot-4": "SOFTWARE | It counts on 4 treatment modalities (Pain Management, Trigger Point, Anti-edema, Biostimulation) enabling an easier and quicker navigation when choosing the therapy."
+    "hotspot-1": "AUTOMATISATION | Le mouvement de la colonne, du bras et les 5 directions robotisées de la tête permettent le positionnement parfait sur la zone à traiter.",
+    "hotspot-2": "TÊTE ROBOTISÉE | Groupe optique multi-diodes MLS® exclusif de 75W de pointe.",
+    "hotspot-3": "DOUBLE TRAITEMENT | M8 délivre des traitements par la tête robotisée, alors que l’utilisateur est libre d’utiliser le pointeur sur des zones douloureuses comme les points gâchette.",
+    "hotspot-4": "LOGICIEL | 4 modes de traitement (Traitement de la douleur, Points Triggers, Anti-œdème, Biostimulation) facilitant la navigation et le choix de la thérapie."
   },
   "de": {
-    "hotspot-1": "AUTOMATION | The movement of the column and arm and rotation of the head in 5 robotized directions, enable perfect positioning on the target area.",
-    "hotspot-2": "ROBOTIC HEAD | Exclusive MLS® multidiode applicator with 75W Peak Power",
-    "hotspot-3": "DOUBLE TREATMENT | M8 provides treatments mainly through the robotic head, while the user is free to use the handpiece on painful areas such as trigger points.",
-    "hotspot-4": "SOFTWARE | It counts on 4 treatment modalities (Pain Management, Trigger Point, Anti-edema, Biostimulation) enabling an easier and quicker navigation when choosing the therapy."
+    "hotspot-1": "AUTOMATISIERUNG | Die Bewegung der Säule, des Arms und die fünf roboterunterstützten Richtungen des Kopfstücks ermöglichen eine perfekte Positionierung auf dem zu behandelnden Bereich.",
+    "hotspot-2": "ROBOTERKOPF | Exklusive optische Multidiodengruppe MLS® mit einer Spitzenleistung von 75W.",
+    "hotspot-3": "DOPPELTE BEHANDLUNG | M8 ermöglicht Behandlungen durch den Roboterkopf, während der Anwender das Handstück für schmerzhafte Bereiche wie Triggerpunkte verwenden kann.",
+    "hotspot-4": "SOFTWARE | Sie ist mit 4 Behandlungsarten (Schmerzmanagement, Triggerpunkte, Anti-Ödem, Biostimulation) erhältlich, die die Anwendung und Auswahl der Therapie erleichtern."
   },
   "es": {
-    "hotspot-1": "AUTOMATION | The movement of the column and arm and rotation of the head in 5 robotized directions, enable perfect positioning on the target area.",
-    "hotspot-2": "ROBOTIC HEAD | Exclusive MLS® multidiode applicator with 75W Peak Power",
-    "hotspot-3": "DOUBLE TREATMENT | M8 provides treatments mainly through the robotic head, while the user is free to use the handpiece on painful areas such as trigger points.",
-    "hotspot-4": "SOFTWARE | It counts on 4 treatment modalities (Pain Management, Trigger Point, Anti-edema, Biostimulation) enabling an easier and quicker navigation when choosing the therapy."
+    "hotspot-1": "AUTOMATIZACIÓN | El movimiento de la columna, del brazo y las 5 direcciones robotizadas del cabezal, permiten la perfecta colocación en el área a tratar.",
+    "hotspot-2": "CABEZAL ROBOTIZADO | Exclusivo grupo óptico multidiódico MLS® de 75W de pico.",
+    "hotspot-3": "DOBLE TRATAMIENTO | El M8 suministra tratamientos a través del cabezal robotizado, mientras que el usuario es libre de utilizar el manipulo en zonas dolorosas, como los puntos gatillo.",
+    "hotspot-4": "SOFTWARE | Está disponible con 4 modos de tratamiento (Gestión del dolor, Punto gatillo, Anti edema, Bioestimulante) facilitando navegación y selección de la terapia."
   }
 }
