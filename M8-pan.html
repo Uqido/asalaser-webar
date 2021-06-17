@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" class="fullscreen-100">
+
+<head>
+    <meta charset="utf-8">
+    <title>Asa Laser M8</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="white" />
+    <link rel="icon" type="image/png" href="favicon-uqido.png">
+    <meta name="description" content="">
+
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <script src="https://unpkg.com/intersection-observer/intersection-observer.js"></script>
+
+    <script src="https://unpkg.com/resize-observer-polyfill/dist/ResizeObserver.js"></script>
+
+    <script src="https://unpkg.com/fullscreen-polyfill/dist/fullscreen.polyfill.js"></script>
+
+    <script src="https://unpkg.com/focus-visible/dist/focus-visible.js" defer></script>
+
+    <script src="js/i18n/banana-i18n.js"></script>
+
+    <script>
+
+        const url = new URL(window.location.href);
+        let lang = url.searchParams.get("lang");
+
+        if (!lang)
+            lang = "en"
+
+        const banana = new Banana(lang);
+
+        fetch('i18n/M8-localization.json')
+            .then((response) => response.json())
+            .then((messages) => {
+                banana.load(messages);
+                console.log("Localize to:" + banana.locale)
+                document.querySelectorAll('[data-i18n]').forEach((elem) => {
+                    const key = elem.getAttribute('data-i18n')
+                    const message = banana.i18n(key)
+                    if (message !== key)
+                        elem.innerHTML = message
+                })
+
+            });
+    </script>
+
+    <style>
+        .uqido-logo {
+            background-image: url("img/asalaser-logo.png");
+            background-size: 175px 72px;
+            height: 72px;
+            width: 175px;
+        }
+
+        .title-color {
+            color: #007C7D;
+        }
+
+        .call-action-color-bg {
+            background-color: #007C7D;
+        }
+
+        .fullscreen-100 {
+            background: unset;
+            background: unset;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .right-description:after {
+            background: transparent;
+        }
+
+        .text {
+            color: black;
+        }
+
+        .viewer-bottom {
+            display: flex;
+            flex-direction: row;
+            left: 8px;
+            bottom: 8px;
+        }
+
+        .viewer-bottom-full {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            height: 60px;
+            background-color: #dddddd;
+        }
+
+        .text-white {
+            color: whitesmoke;
+            text-shadow: 2px 1px 2px #000;
+        }
+
+        .hotspot-content {
+            height: 5rem;
+            margin-left: 8px;
+            margin-top: -4px;
+            max-width: 350px;
+            font-size: 0.9rem;
+            background-color: #06070869;
+            border-radius: 10px;
+            padding: 4px;
+        }
+
+        .no-loading-mask {
+            --progress-mask: #0000;
+            --poster-color: #0000;
+        }
+
+        .clickable {
+            z-index: 21;
+            user-select: none;
+            text-align: center;
+            width: 42px;
+            height: 42px;
+            background-size: 42px 42px;
+            cursor: pointer;
+            margin: auto 8px auto auto;
+        }
+
+        .hotspot-pin {
+            /* background-color: #3CF; */
+            background: radial-gradient(rgba(160, 230, 253, 1), rgb(73, 112, 251));
+            /* Standard */
+            background: -webkit-radial-gradient(rgba(160, 230, 253, 1), rgb(73, 112, 251));
+            /* Safari */
+            background: -o-radial-gradient(rgba(160, 230, 253, 1), rgb(73, 112, 251));
+            /* Opera 11.1 to 12.0 */
+            background: -moz-radial-gradient(rgba(160, 230, 253, 1), rgb(73, 112, 251));
+            /* FF 3.6 to 15 */
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 12px;
+            width: 12px;
+            z-index: 10;
+        }
+
+        .outer {
+            border: 5px solid #FFF;
+            height: 50px;
+            width: 50px;
+            top: -24px;
+            left: -24px;
+        }
+
+        .mid {
+            border: 1px solid #FFF;
+            height: 40px;
+            width: 40px;
+            top: -15px;
+            left: -15px;
+        }
+
+        .inner {
+            border: 1px solid #FFF;
+            height: 20px;
+            width: 20px;
+            top: -5px;
+            left: -5px;
+        }
+
+        @media only screen and (max-width: 950px) {
+            .hotspot-content {
+                height: 7rem;
+                max-width: 160px;
+                font-size: 0.7em;
+            }
+
+            .fullscreen-100 {
+                background: unset;
+                background: unset;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .no-loading-mask {
+                --progress-mask: #0000;
+                --poster-color: #0000;
+            }
+
+            .clickable {
+                z-index: 21;
+                user-select: none;
+                text-align: center;
+                width: 42px;
+                height: 42px;
+                background-size: 42px 42px;
+                cursor: pointer;
+                margin: auto 8px auto auto;
+            }
+
+            .viewer-bottom-full {
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+                height: 60px;
+                background-color: #dddddd;
+            }
+
+            .hotspot-pin {
+                height: 18px;
+                width: 18px;
+            }
+
+            .outer {
+                top: -21px;
+                left: -21px;
+            }
+
+            .mid {
+                top: -12px;
+                left: -12px;
+            }
+
+            .inner {
+                top: -2px;
+                left: -2px;
+            }
+        }
+
+
+        .hide-child .hotspot-pin-text {
+            display: none
+        }
+
+        .hide-pulse .pulse {
+            display: none
+        }
+
+        .hotspot-pin-text {
+            transform: translate(-50%, -100%);
+            width: 350px;
+            position: absolute;
+            top: 0;
+        }
+
+
+        .pulse {
+            background: transparent;
+            border-radius: 60px;
+            -webkit-border-radius: 60px;
+            -moz-border-radius: 60px;
+            animation: pulse 1.5s linear;
+            -webkit-animation: pulse 1.5s linear;
+            -moz-animation: pulse 1.5s linear;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            position: absolute;
+            z-index: 1;
+            opacity: 1;
+        }
+
+
+        @-moz-keyframes pulse {
+            0% {
+                -moz-transform: scale(0);
+                opacity: 0.0;
+            }
+
+            25% {
+                -moz-transform: scale(0);
+                opacity: 0.2;
+            }
+
+            50% {
+                -moz-transform: scale(0.1);
+                opacity: 0.5;
+            }
+
+            75% {
+                -moz-transform: scale(0.5);
+                opacity: 0.9;
+            }
+
+            100% {
+                -moz-transform: scale(1);
+                opacity: 0.0;
+            }
+        }
+
+        @-webkit-keyframes "pulse" {
+            0% {
+                -webkit-transform: scale(0);
+                opacity: 0.0;
+            }
+
+            25% {
+                -webkit-transform: scale(0);
+                opacity: 0.2;
+            }
+
+            50% {
+                -webkit-transform: scale(0.1);
+                opacity: 0.5;
+            }
+
+            75% {
+                -webkit-transform: scale(0.5);
+                opacity: 0.9;
+            }
+
+            100% {
+                -webkit-transform: scale(1);
+                opacity: 0.0;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="fullscreen-100">
+    <model-viewer id="modelViewer" class='model-viewer no-loading-mask' ar camera-controls src='models/M8.glb'
+        ios-src='models/M8.usdz' alt='' style="background-color: unset;" auto-rotate-delay='8000'
+        camera-target="0m 1m 0m" exposure="1" shadow-softness="0.6" quick-look-browsers="safari chrome"
+        ar-modes="scene-viewer webxr quick-look" noloop shadow-intensity="1.1"
+        environment-image="img/small_cathedral_1k.hdr" camera-orbit="140deg 60.76deg 1.3m"
+        min-camera-orbit="auto 0deg 0.6m" max-camera-orbit="auto 88deg 2.6m" min-field-of-view="42.62deg"
+        max-field-of-view="auto">
+
+        <script>
+            (() => {
+                if (document.addEventListener) {
+                    document.addEventListener('contextmenu', function (e) {
+                        e.preventDefault();
+                    }, false);
+                } else {
+                    document.attachEvent('oncontextmenu', function () {
+                        window.event.returnValue = false;
+                    });
+                }
+                const modelViewer = document.querySelector('#modelViewer');
+                const tapDistance = 1;
+                let panning = false;
+                let panY;
+                let startY;
+                let lastY;
+                let metersPerPixel;
+
+                const startPan = () => {
+                    const orbit = modelViewer.getCameraOrbit();
+                    const { theta, phi, radius } = orbit;
+                    const psi = theta - modelViewer.turntableRotation;
+                    metersPerPixel = 0.75 * radius / modelViewer.getBoundingClientRect().height;
+                    panY = [
+                        -Math.cos(phi) * Math.sin(psi),
+                        Math.sin(phi),
+                        -Math.cos(phi) * Math.cos(psi)
+                    ];
+                    modelViewer.interactionPrompt = 'none';
+                };
+
+                const movePan = (thisY) => {
+                    const dy = (thisY - lastY) * metersPerPixel;
+                    lastY = thisY;
+
+                    const target = modelViewer.getCameraTarget();
+                    //target.x += dy * panY[0];
+                    target.y += dy * panY[1];
+                    //target.z += dy * panY[2];
+                    modelViewer.cameraTarget = `${target.x}m ${target.y}m ${target.z}m`;
+
+                    // This pauses turntable rotation
+                    modelViewer.dispatchEvent(new CustomEvent(
+                        'camera-change', { detail: { source: 'user-interaction' } }));
+                };
+
+                const recenter = (pointer) => {
+                    panning = false;
+                    if (Math.abs(pointer.clientY - startY) > tapDistance)
+                        return;
+                    const rect = modelViewer.getBoundingClientRect();
+                    const x = event.clientX - rect.left;
+                    const y = event.clientY - rect.top;
+                    const hit = modelViewer.positionAndNormalFromPoint(x, y);
+                    modelViewer.cameraTarget =
+                        hit == null ? 'auto auto auto' : hit.position.toString();
+                };
+
+                const onPointerUp = (event) => {
+                    const pointer = event.clientX ? event : event.changedTouches[0];
+                    if (Math.abs(pointer.clientY - startY) < tapDistance) {
+                        recenter(pointer);
+                    }
+                    panning = false;
+                };
+
+                modelViewer.addEventListener('mousedown', (event) => {
+                    startY = event.clientY;
+                    panning = event.button === 2;
+                    if (!panning)
+                        return;
+
+                    lastY = startY;
+                    startPan();
+                    event.stopPropagation();
+                }, true);
+
+                modelViewer.addEventListener('touchstart', (event) => {
+                    startY = event.touches[0].clientY;
+                    panning = event.touches.length === 2;
+                    if (!panning)
+                        return;
+
+                    const { touches } = event;
+                    lastY = 0.5 * (touches[0].clientY + touches[1].clientY);
+                    startPan();
+                }, true);
+
+                modelViewer.addEventListener('mousemove', (event) => {
+                    if (!panning)
+                        return;
+
+                    movePan(event.clientY);
+                    event.stopPropagation();
+                }, true);
+
+                modelViewer.addEventListener('touchmove', (event) => {
+                    if (!panning || event.touches.length !== 2)
+                        return;
+
+                    const { touches } = event;
+                    const thisY = 0.5 * (touches[0].clientY + touches[1].clientY);
+                    movePan(thisY);
+                }, true);
+
+                self.addEventListener('mouseup', (event) => {
+                    //recenter(event);
+                    panning = false
+                    //modelViewer.cameraTarget = 'auto auto auto'
+                    //if (event.button === 2)
+                    //    event.stopPropagation()
+                }, true);
+
+                self.addEventListener('touchend', (event) => {
+                    if (event.touches.length === 0) {
+                        recenter(event.changedTouches[0]);
+                    }
+                }, true);
+            })();
+        </script>
+
+        <div id="hotspot-1" style="width: 24px;height: 24px" slot="hotspot-2" data-position="0m 1m 0.1m"
+            data-normal="0 1 0" data-visibility-attribute="visible" onclick="onPinClick('hotspot-1')">
+            <div data-i18n="hotspot-1" class="hotspot-pin-text text-white hotspot-content">
+                AUTOMATION | The movement of the column and arm and rotation of the head in 5 robotized directions,
+                enable perfect positioning on the target area.
+            </div>
+            <div class="hotspot-pin">
+            </div><!-- dot -->
+            <div class="pulse outer"></div><!-- pulse outer -->
+            <div class="pulse mid"></div><!-- pulse mid -->
+            <div class="pulse inner"></div><!-- pulse inner -->
+        </div>
+
+
+        <div id="hotspot-2" class="hotspot-pin" slot="hotspot-3" data-position="0m 1.44m -0.38m" data-normal="0 1 0"
+            data-visibility-attribute="visible">
+            <div class="hotspot-pin" onclick="onPinClick('hotspot-2')">
+                <div class="hotspot-pin-text text-white hotspot-content" data-i18n="hotspot-2">
+                    ROBOTIC HEAD | Exclusive MLS® multidiode applicator with 75W Peak Power
+                </div>
+            </div><!-- dot -->
+            <div class="pulse outer"></div><!-- pulse outer -->
+            <div class="pulse mid"></div><!-- pulse mid -->
+            <div class="pulse inner"></div><!-- pulse inner -->
+        </div>
+
+
+        <div id="hotspot-3" class="hotspot-pin" slot="hotspot-4" data-position="-0.15m 0.87m 0.3m" data-normal="0 1 0"
+            data-visibility-attribute="visible">
+            <div class="hotspot-pin" onclick="onPinClick('hotspot-3')">
+                <div class="hotspot-pin-text text-white hotspot-content" data-i18n="hotspot-3">
+                    DOUBLE TREATMENT | M8 provides treatments mainly through the robotic head, while the user is free to
+                    use the handpiece on painful areas such as trigger points.
+                </div><!-- dot -->
+                <div class="pulse outer"></div><!-- pulse outer -->
+                <div class="pulse mid"></div><!-- pulse mid -->
+                <div class="pulse inner"></div><!-- pulse inner -->
+
+            </div>
+        </div>
+        <div id="hotspot-4" class="hotspot-pin" slot="hotspot-5" data-position="0m 0.97m 0.28m" data-normal="0 1 0"
+            data-visibility-attribute="visible">
+            <div class="hotspot-pin" onclick="onPinClick('hotspot-4')">
+                <div class="hotspot-pin-text text-white hotspot-content" data-i18n="hotspot-4">
+                    SOFTWARE | It counts on 4 treatment modalities (Pain Management, Trigger Point, Anti-edema,
+                    Biostimulation) enabling an easier and quicker navigation when choosing the therapy.
+                </div>
+                <div class="pulse outer"></div><!-- pulse outer -->
+                <div class="pulse mid"></div><!-- pulse mid -->
+                <div class="pulse inner"></div><!-- pulse inner -->
+
+            </div>
+        </div>
+
+        <div class="viewer-bottom">
+            <div id="move_camera" onclick="rotateCamera()" class="clickable"
+                style="background-image: url(img/Move.png);"></div>
+            <div id="animate" onclick="model_Animate()" class="clickable"
+                style="background-image: url(img/Animate.png);"></div>
+        </div>
+        <script>
+
+            let forceNoIframe = true;
+            let forceAnnotations = true;
+
+            let colors = [];
+
+            const positions = ["-1591deg 32.76deg 100%", "90deg 70deg 100%", "0deg 70deg 100%", "-90deg 70deg 100%", "165deg 70deg 100%"];
+
+
+            const getAnnotations = function () {
+                return [document.getElementById("hotspot-1"), document.getElementById("hotspot-2"), document.getElementById("hotspot-3"), document.getElementById("hotspot-4")].filter((elem) => elem);
+            }
+
+            const positionToAnnotation = {
+                0: [],
+                1: ["hotspot-1"],
+                2: ["hotspot-2"],
+                3: ["hotspot-3"],
+                4: ["hotspot-4"]
+            };
+
+            getAnnotations().forEach((element) => {
+                element.style.display = "none";
+            })
+
+            modelViewer.addEventListener('load', () => {
+                getAnnotations().forEach((element) => {
+                    element.style.display = "block";
+                })
+            });
+
+        </script>
+        <script src="js/NewContentCustomizer.js"></script>
+        <script>
+            for (let annotation of annotations) {
+                annotation.classList.add("hide-child");
+            }
+
+
+            let is_Open = false;
+
+            function model_Animate() {
+                console.log("animate")
+                console.log(modelViewer.paused)
+                if (modelViewer.paused) {
+                    if (is_Open) {
+                        modelViewer.animationName = "Idle";
+                        modelViewer.animationName = "Animate";
+                        hideAndDisablePin()
+                        is_Open = false;
+                        const interval = setInterval(() => {
+                            if (modelViewer.paused) {
+                                clearInterval(interval);
+                                showAndEnablePin();
+                            }
+                        }, 500);
+                    } else {
+                        modelViewer.animationName = "Idle";
+                        modelViewer.animationName = "Animate";
+                        hideAndDisablePin()
+                        is_Open = true;
+                        const interval = setInterval(() => {
+                            if (modelViewer.paused) {
+                                clearInterval(interval);
+                                showAndEnablePin();
+                            }
+                        }, 500);
+                    }
+                    modelViewer.play();
+                }
+            }
+
+
+            const onPinClick = function (annotationID) {
+
+                const item = document.getElementById(annotationID);
+
+                if (!item.classList.contains("hide-child")) {
+                    //it was already opened! closing
+                    for (let annotation of annotations) {
+                        annotation.classList.add("hide-child");
+                        annotation.classList.remove("hide-pulse");
+                    }
+                    return;
+                }
+
+                for (let annotation of annotations) {
+                    annotation.classList.add("hide-child");
+                    annotation.classList.remove("hide-pulse");
+                }
+
+                item.classList.remove("hide-child")
+                item.classList.add("hide-pulse")
+            }
+
+            const hideAndDisablePin = function () {
+                for (let annotation of annotations) {
+                    annotation.classList.add("hide-child");
+                    annotation.classList.remove("hide-pulse");
+                }
+
+                for (let annotation of annotations) {
+                    annotation.style.display = "none"
+                }
+            }
+
+            const showAndEnablePin = function () {
+
+                for (let annotation of annotations) {
+                    annotation.style.display = "block"
+                }
+            }
+        </script>
+
+        <style>
+            @media only screen and (max-width: 950px) {
+                .iframe-loader {
+                    color: #dfdfdf;
+                }
+
+                .iframe-loader>div {
+                    background: #dfdfdf;
+                }
+
+                .uqido-logo {
+                    margin: 20px auto 0 0;
+                }
+            }
+        </style>
+    </model-viewer>
+    <script type="module" src="js/model-viewer/dist/1.7.2/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+</body>
+
+</html>
