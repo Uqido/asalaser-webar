@@ -562,8 +562,7 @@
                 console.log(modelViewer.paused)
                 if (modelViewer.paused) {
                     if (is_Open) {
-                        modelViewer.animationName = "Idle";
-                        modelViewer.animationName = "Animate";
+                        modelViewer.animationName = "Close";
                         hideAndDisablePin()
                         is_Open = false;
                         const interval = setInterval(() => {
@@ -573,8 +572,7 @@
                             }
                         }, 500);
                     } else {
-                        modelViewer.animationName = "Idle";
-                        modelViewer.animationName = "Animate";
+                        modelViewer.animationName = "Open";
                         hideAndDisablePin()
                         is_Open = true;
                         const interval = setInterval(() => {
